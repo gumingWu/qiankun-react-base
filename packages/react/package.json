@@ -1,9 +1,9 @@
 {
-  "name": "main",
+  "name": "react-child",
   "private": true,
   "author":"gumingWu <15626185054@163.com>",
   "scripts": {
-    "dev": "cross-env PORT=666 umi dev",
+    "dev": "cross-env PORT=777 umi dev",
     "build": "umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
