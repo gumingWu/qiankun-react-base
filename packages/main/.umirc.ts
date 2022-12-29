@@ -12,11 +12,11 @@ export default defineConfig({
     master: {
       apps: [
         {
-          name: 'react-child',
+          name: 'reactchild',
           entry: '//localhost:777'
         },
         {
-          name: 'vue-child',
+          name: 'vuechild',
           entry: '//localhost:888'
         },
       ]

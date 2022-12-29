@@ -1,5 +1,4 @@
-import { MicroApp } from 'umi';
-import { useState } from 'react'
+import { history, Outlet } from 'umi';
 import styles from './index.less';
 
 interface ISideItemProps {
@@ -16,26 +15,25 @@ const SideItem = (props: ISideItemProps) => {
 }
 
 export default function Layout() {
-  const [curApp, setCurApp] = useState('main')
-
+  const routeToMain = () => {
+    history.push('/')
+  }
   const routeToReact = () => {
-    setCurApp('react')
-    window.history.pushState('', '', '/react-child')  // 还是需要配合路由一起改变
+    history.push('/reactchild')
+  }
+  const routeToVue = () => {
+    history.push('/vuechild')
   }
 
   return (
     <div className={styles.layout}>
       <aside>
-        <SideItem onClick={() => setCurApp('main')}>基座页面</SideItem>
+        <SideItem onClick={routeToMain}>基座页面</SideItem>
         <SideItem onClick={routeToReact}>react子应用</SideItem>
-        <SideItem onClick={() => setCurApp('vue')}>vue子应用</SideItem>
+        <SideItem onClick={routeToVue}>vue子应用</SideItem>
       </aside>
       <main>
-        {
-          curApp === 'main' ? <div>我是基座页面</div> :
-          curApp === 'react' ? <MicroApp name="react-child" /> :
-          curApp === 'vue' ? <div>我是vue页面</div> : null
-        }
+        <Outlet />
       </main>
     </div>
   );

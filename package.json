@@ -3,8 +3,8 @@
   "author": "gumingWu <15626185054@163.com>",
   "scripts": {
     "main": "pnpm dev -F main",
-    "react": "pnpm dev -F react-child",
-    "vue": "pnpm serve -F vue-child"
+    "react": "pnpm dev -F reactchild",
+    "vue": "pnpm serve -F vuechild"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

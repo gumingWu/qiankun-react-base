@@ -7,4 +7,10 @@ module.exports = defineConfig({
       'Access-Control-Allow-Origin': '*',
     },
   },
+  configureWebpack: {
+    output: {
+      library: 'vuechild',
+      libraryTarget: 'umd',
+    },
+  },
 })
